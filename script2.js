@@ -1,5 +1,4 @@
-
-        // Fungsi untuk tab navigasi
+ // Fungsi untuk tab navigasi
         document.querySelectorAll('.tab').forEach(tab => {
             tab.addEventListener('click', () => {
                 // Hapus kelas aktif dari semua tab dan konten
@@ -46,13 +45,10 @@
         if (copyButton) {
             copyButton.addEventListener('click', () => {
                 const codeSnippet = document.getElementById('code-snippet');
-                // navigator.clipboard.writeText is more modern but might not work on insecure origins (http)
-                // Using a textarea fallback for better compatibility.
                 const codeText = codeSnippet.innerText;
 
                 navigator.clipboard.writeText(codeText).then(() => {
                     // Success feedback
-                    const originalText = copyButton.innerHTML;
                     copyButton.innerHTML = `<i class="fas fa-check"></i> <span>Copied!</span>`;
                     copyButton.disabled = true;
                     
@@ -66,4 +62,23 @@
                 });
             });
         }
-   
+
+        // Fungsi untuk tombol "Lihat Selengkapnya"
+        const toggleCodeBtn = document.getElementById('toggle-code-btn');
+        if(toggleCodeBtn) {
+            const fullCode = document.getElementById('full-code');
+            const codeEllipsis = document.getElementById('code-ellipsis');
+
+            toggleCodeBtn.addEventListener('click', () => {
+                const isHidden = fullCode.style.display === 'none';
+                if (isHidden) {
+                    fullCode.style.display = 'inline';
+                    codeEllipsis.style.display = 'none';
+                    toggleCodeBtn.textContent = 'Tampilkan Lebih Sedikit';
+                } else {
+                    fullCode.style.display = 'none';
+                    codeEllipsis.style.display = 'inline';
+                    toggleCodeBtn.textContent = 'Lihat Selengkapnya';
+                }
+            });
+        }

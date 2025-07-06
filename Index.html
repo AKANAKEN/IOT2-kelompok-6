@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Box Packet Berbasis IoT - Kelompok 6</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="Style2.css">
+</head>
+<body>
+    <div class="university-header">
+        <h1>UNIVERSITAS BINA INSANI BEKASI</h1>
+        <h2>FAKULTAS INFORMATIKA</h2>
+        <h3>PROGRAM STUDI TEKNIK INFORMATIKA</h3>
+    </div>
+
+    <div class="container">
+        <div class="project-header">
+            <h1 class="project-title">PERANCANGAN SMART BOX PACKET BERBASIS IOT</h1>
+            <div class="project-subtitle">Menggunakan Chatbot Telegram</div>
+            <div class="project-group">Kelompok 6</div>
+            <div class="lecturer-info">
+                <p>Dosen Pengampu: <strong>Rully Pramudita, S.T., M.Kom.</strong></p>
+            </div>
+        </div>
+
+        <div class="tabs">
+            <div class="tab active" data-tab="team">Anggota Tim</div>
+            <div class="tab" data-tab="background">Latar Belakang</div>
+            <div class="tab" data-tab="implementation">Implementasi</div>
+            <div class="tab" data-tab="conclusion">Kesimpulan</div>
+            <!-- <div class="tab" data-tab="documentation">Dokumentasi</div> -->
+        </div>
+
+        <div id="team-content" class="tab-content active">
+            <section class="team-section">
+                <h2><i class="fas fa-users"></i> ANGGOTA KELOMPOK</h2>
+                <div class="team-members">
+                    <div class="member-card">
+                        <div class="member-number">01</div>
+                        <div class="member-info">
+                            <h3>MUHAMMAD NUR ILYAS</h3>
+                            <p>NIM: 2022310075</p>
+                        </div>
+                    </div>
+                    <div class="member-card">
+                        <div class="member-number">02</div>
+                        <div class="member-info">
+                            <h3>SUGIARTO CATRIO MULYO RACHMANTO</h3>
+                            <p>NIM: 2022310030</p>
+                        </div>
+                    </div>
+                    <div class="member-card">
+                        <div class="member-number">03</div>
+                        <div class="member-info">
+                            <h3>KEVIN MUBARAK</h3>
+                            <p>NIM: 2022310003</p>
+                        </div>
+                    </div>
+                    <div class="member-card">
+                        <div class="member-number">04</div>
+                        <div class="member-info">
+                            <h3>IKHWAN NINGRATTAMA</h3>
+                            <p>NIM: 2022310044</p>
+                        </div>
+                    </div>
+                    <div class="member-card">
+                        <div class="member-number">05</div>
+                        <div class="member-info">
+                            <h3>REYHAN TRI KURNIAWAN</h3>
+                            <p>NIM: 2022310047</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div id="background-content" class="tab-content">
+            <section class="section">
+                <h2><i class="fas fa-book-open"></i> LATAR BELAKANG</h2>
+                <div class="content-box">
+                    <p>Dalam perkembangan teknologi yang semakin maju, aktivitas masyarakat tidak bisa terlepas dari smartphone. Banyaknya pengguna internet di Indonesia menciptakan pasar yang sangat baik dalam industri jual beli online. Belanja online memberikan kemudahan dan kenyamanan, memungkinkan konsumen melakukan pembelian kapan saja dan di mana saja.</p>
+                    
+                    <p>Seringkali muncul tantangan selama proses pengiriman. Salah satu masalah yang sering dialami adalah ketika penerima tidak ada di rumah karena sibuk dengan jadwal kerja atau bepergian. Keadaan tersebut dapat merugikan kedua belah pihak, baik dari segi jasa pengirim barang maupun pihak penerima barang.</p>
+                    
+                    <p>Perkembangan teknologi sekarang, sudah banyak diciptakan perancangan alat untuk melakukan pemantauan dan pengontrolan jarak jauh berbasis Internet of Things (IoT) menggunakan smartphone. Internet of Things adalah suatu metode untuk melakukan pengontrolan jarak jauh, monitoring, dan pengiriman data yang dapat dilakukan dengan mudah serta diakses dimana saja.</p>
+                    
+                    <p>Sebagai solusinya, penelitian ini akan membuat sebuah alat yang bertujuan untuk mengatasi permasalahan tersebut dengan merancang dan mengembangkan kotak penerima paket berbasis IoT. Kotak ini dapat menerima paket ketika keadaan rumah kosong tanpa adanya penerima paket, dengan pengawasan atau pemantauan dari pengguna melalui sistem pengontrolan jarak jauh via chatbot Telegram.</p>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2><i class="fas fa-question-circle"></i> RUMUSAN MASALAH</h2>
+                <div class="content-box">
+                    <ol>
+                        <li>Bagaimana merancang sistem kotak penerima paket yang dapat dioperasikan secara jarak jauh menggunakan teknologi Internet of Things (IoT)?</li>
+                        <li>Bagaimana memanfaatkan mikrokontroler ESP32-CAM untuk mengirim notifikasi serta melakukan pemantauan isi kotak secara real-time?</li>
+                        <li>Bagaimana membangun komunikasi dua arah antara sistem dan pengguna melalui chatbot Telegram?</li>
+                        <li>Bagaimana memastikan sistem penguncian dan pembukaan kotak paket dapat dikendalikan secara aman dan efisien dari jarak jauh?</li>
+                    </ol>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2><i class="fas fa-bullseye"></i> TUJUAN PROYEK</h2>
+                <div class="content-box">
+                    <ol>
+                        <li>Untuk mengatasi masalah penerimaan paket ketika penghuni rumah sedang tidak berada di tempat.</li>
+                        <li>Membangun sistem kotak penerima paket berbasis Internet of Things (IoT) yang dapat dikendalikan dan dimonitor secara jarak jauh.</li>
+                        <li>Mengintegrasikan chatbot Telegram sebagai antarmuka komunikasi antara pengguna dengan sistem pengontrol kotak paket.</li>
+                        <li>Mengembangkan sistem keamanan sederhana dengan fitur kunci otomatis berbasis motor servo serta monitoring menggunakan kamera (ESP32-Cam).</li>
+                        <li>Memberikan notifikasi real-time kepada pengguna ketika paket dikirimkan dan dimasukkan ke dalam kotak.</li>
+                    </ol>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2><i class="fas fa-star"></i> MANFAAT</h2>
+                <div class="content-box">
+                    <ol>
+                        <li>Meningkatkan kenyamanan dan efisiensi pengguna dalam menerima paket, terutama saat tidak berada di rumah.</li>
+                        <li>Mengurangi risiko kehilangan atau salah penanganan paket karena adanya sistem notifikasi dan pemantauan langsung.</li>
+                        <li>Memanfaatkan teknologi IoT secara praktis dalam kehidupan sehari-hari melalui integrasi dengan perangkat pintar.</li>
+                        <li>Menunjang perkembangan sistem otomatisasi rumah tangga (smart home) yang lebih canggih dan terhubung dengan internet.</li>
+                        <li>Memberikan alternatif solusi bagi jasa pengiriman dan pelanggan dalam hal koordinasi pengantaran paket secara efisien.</li>
+                    </ol>
+                </div>
+            </section>
+        </div>
+
+        <div id="implementation-content" class="tab-content">
+            <section class="section">
+                <h2><i class="fas fa-sitemap"></i> ARSITEKTUR SISTEM</h2>
+                <div class="architecture">
+                    <div class="hardware">
+                        <h3><i class="fas fa-microchip"></i> Hardware</h3>
+                        <ul>
+                            <li><strong>Sensor Ultrasonik:</strong> Mendeteksi keberadaan paket dengan mengukur jarak</li>
+                            <li><strong>Servo Motor:</strong> Aktuator untuk membuka dan mengunci pintu kotak</li>
+                            <li><strong>ESP32-CAM:</strong> Modul kamera untuk mengambil gambar isi kotak</li>
+                            <li><strong>Kabel Jumper:</strong> Media penghubung antar komponen elektronik</li>
+                            <li><strong>Kotak Paket (Box):</strong> Kotak fisik berbahan kayu/triplek</li>
+                            <li><strong>LCD I2C:</strong> Menampilkan status sistem</li>
+                        </ul>
+                    </div>
+                    <div class="software">
+                        <h3><i class="fas fa-code"></i> Software</h3>
+                        <ul>
+                            <li><strong>Arduino IDE:</strong> Untuk menulis dan mengunggah program</li>
+                            <li><strong>Telegram Bot API:</strong> Sarana komunikasi antara pengguna dan alat</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2><i class="fas fa-cogs"></i> IMPLEMENTASI SISTEM</h2>
+                <div class="content-box">
+                    <p>Sistem kotak penerima paket ini diimplementasikan hanya dengan menggunakan satu modul utama, yaitu ESP32-CAM. Modul ini memiliki fungsi sebagai mikrokontroler sekaligus kamera serta mendukung koneksi Wi-Fi, sehingga mampu menangani seluruh proses kerja sistem secara mandiri.</p>
+                    
+                    <p>Pada tahap implementasi, ESP32-CAM diprogram menggunakan Arduino IDE untuk mengatur logika kerja sistem yang mencakup:</p>
+                    
+                    <ul>
+                        <li>Koneksi ke jaringan Wi-Fi</li>
+                        <li>Komunikasi dengan Telegram bot</li>
+                        <li>Pengambilan gambar</li>
+                        <li>Kendali terhadap motor servo</li>
+                    </ul>
+                    
+                    <p>Pengguna dapat mengontrol sistem melalui Telegram dengan mengirimkan perintah tertentu:</p>
+                    
+                    <ul>
+                        <li><code>/photo</code> - Mengambil gambar isi kotak</li>
+                        <li><code>/open</code> - Membuka kunci kotak</li>
+                        <li><code>/close</code> - Mengunci kotak</li>
+                        <li><code>/status</code> - Memeriksa status sistem</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2><i class="fas fa-project-diagram"></i> RANGKAIAN SISTEM</h2>
+                <div class="system-diagram">
+                    <div class="diagram-card">
+                        <h3>Wiring Rangkaian</h3>
+                        <div class="diagram-placeholder">
+                            Diagram Koneksi Komponen
+                        </div>
+                        <p>Rangkaian terdiri dari ESP32 sebagai mikrokontroler pusat, sensor ultrasonik HC-SR04, dan motor servo.</p>
+                    </div>
+                    
+                    <div class="diagram-card">
+                        <h3>Susunan Rangkaian</h3>
+                        <div class="diagram-placeholder">
+                            Tampilan Fisik Rangkaian
+                        </div>
+                        <p>Seluruh sistem dihubungkan melalui breadboard untuk distribusi daya dan ground yang stabil.</p>
+                    </div>
+                    
+                    <div class="diagram-card">
+                        <h3>Skema Box</h3>
+                        <div class="diagram-placeholder">
+                            Desain Kotak Paket
+                        </div>
+                        <p>Kotak dengan dimensi 40cm x 60cm x 60cm menggunakan bahan triplek dengan mekanisme penguncian khusus.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2><i class="fas fa-code"></i> SOURCE CODE</h2>
+                <div class="content-box">
+                    <p>Berikut adalah kode program lengkap yang digunakan pada ESP32-CAM:</p>
+                    
+                    <div class="code-wrapper">
+                        <button class="copy-btn" id="copy-code-btn" title="Copy code">
+                            <i class="fas fa-copy"></i>
+                            <span>Copy</span>
+                        </button>
+                        <div class="code-section">
+                            <pre id="code-snippet"><span class="preprocessor">#include &lt;WiFi.h&gt;</span>
+<span class="preprocessor">#include &lt;WiFiClientSecure.h&gt;</span>
+<span class="preprocessor">#include "soc/soc.h"</span>
+<span class="preprocessor">#include "soc/rtc_cntl_reg.h"</span>
+<span class="preprocessor">#include "esp_camera.h"</span>
+<span class="preprocessor">#include &lt;UniversalTelegramBot.h&gt;</span>
+<span class="preprocessor">#include &lt;ArduinoJson.h&gt;</span>
+<span class="preprocessor">#include &lt;ESP32Servo.h&gt;</span>
+
+<span class="comment">// ===============================================================</span>
+<span class="comment">// --- KONFIGURASI PENGGUNA (SESUAIKAN DENGAN KEBUTUHAN) ---</span>
+<span class="comment">// ===============================================================</span>
+<span class="keyword">const char</span>* ssid = <span class="string">"Akanaken10"</span>;
+<span class="keyword">const char</span>* password = <span class="string">"11010101010"</span>;
+String BOTtoken = <span class="string">"8144770086:AAF6SCj73kmT8o0ELmDpwBMMnfmNdr2bg8I"</span>;
+<span class="keyword">const</span> String ALLOWED_CHAT_IDS[] = { <span class="string">"1196693096"</span> };
+<span class="keyword">const int</span> NUM_ALLOWED_IDS = <span class="keyword">sizeof</span>(ALLOWED_CHAT_IDS) / <span class="keyword">sizeof</span>(ALLOWED_CHAT_IDS[<span class="number">0</span>]);
+
+<span class="comment">// --- Definisi Pin ---</span>
+<span class="preprocessor">#define SERVO_PIN 13</span>
+<span class="preprocessor">#define TRIG_PIN  14</span>
+<span class="preprocessor">#define ECHO_PIN  15</span>
+<span class="preprocessor">#define FLASH_PIN 4</span>
+
+<span class="comment">// ===============================================================</span>
+<span class="comment">// --- INISIALISASI OBJEK & VARIABEL GLOBAL ---</span>
+<span class="comment">// ===============================================================</span>
+WiFiClientSecure clientTCP;
+UniversalTelegramBot bot(BOTtoken, clientTCP);
+Servo myServo;
+
+<span class="keyword">unsigned long</span> lastTimeBotRan = <span class="number">0</span>;
+<span class="keyword">unsigned long</span> botRequestDelay = <span class="number">500</span>;
+<span class="keyword">unsigned long</span> lastSensorCheck = <span class="number">0</span>;
+<span class="keyword">unsigned long</span> sensorInterval = <span class="number">50</span>;
+<span class="keyword">unsigned long</span> lastAlertTime = <span class="number">0</span>;
+<span class="keyword">unsigned long</span> alertCooldown = <span class="number">2000</span>;
+
+<span class="comment">// --- Konfigurasi Pin Kamera (AI-THINKER ESP32-CAM) ---</span>
+<span class="preprocessor">#define PWDN_GPIO_NUM    32</span>
+<span class="preprocessor">#define RESET_GPIO_NUM   -1</span>
+<span class="preprocessor">#define XCLK_GPIO_NUM     0</span>
+<span class="preprocessor">#define SIOD_GPIO_NUM    26</span>
+<span class="preprocessor">#define SIOC_GPIO_NUM    27</span>
+<span class="preprocessor">#define Y9_GPIO_NUM      35</span>
+<span class="preprocessor">#define Y8_GPIO_NUM      34</span>
+<span class="preprocessor">#define Y7_GPIO_NUM      39</span>
+<span class="preprocessor">#define Y6_GPIO_NUM      36</span>
+<span class="preprocessor">#define Y5_GPIO_NUM      21</span>
+<span class="preprocessor">#define Y4_GPIO_NUM      19</span>
+<span class="preprocessor">#define Y3_GPIO_NUM      18</span>
+<span class="preprocessor">#define Y2_GPIO_NUM       5</span>
+<span class="preprocessor">#define VSYNC_GPIO_NUM   25</span>
+<span class="preprocessor">#define HREF_GPIO_NUM    23</span>
+<span class="preprocessor">#define PCLK_GPIO_NUM    22</span>
+
+<span class="comment">// ===============================================================</span>
+<span class="comment">// --- FUNGSI-FUNGSI UTAMA ---</span>
+<span class="comment">// ===============================================================</span>
+
+<span class="keyword">bool</span> <span class="function">isAuthorized</span>(String chat_id) {
+  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i < NUM_ALLOWED_IDS; i++) {
+    <span class="keyword">if</span> (chat_id == ALLOWED_CHAT_IDS[i]) <span class="keyword">return true</span>;
+  }
+  <span class="keyword">return false</span>;
+}
+
+<span class="keyword">void</span> <span class="function">configInitCamera</span>() {
+  camera_config_t config;
+  config.ledc_channel = LEDC_CHANNEL_0;
+  config.ledc_timer = LEDC_TIMER_0;
+  config.pin_d0 = Y2_GPIO_NUM; config.pin_d1 = Y3_GPIO_NUM;
+  config.pin_d2 = Y4_GPIO_NUM; config.pin_d3 = Y5_GPIO_NUM;
+  config.pin_d4 = Y6_GPIO_NUM; config.pin_d5 = Y7_GPIO_NUM;
+  config.pin_d6 = Y8_GPIO_NUM; config.pin_d7 = Y9_GPIO_NUM;
+  config.pin_xclk = XCLK_GPIO_NUM;
+  config.pin_pclk = PCLK_GPIO_NUM;
+  config.pin_vsync = VSYNC_GPIO_NUM;
+  config.pin_href = HREF_GPIO_NUM;
+  config.pin_sscb_sda = SIOD_GPIO_NUM;
+  config.pin_sscb_scl = SIOC_GPIO_NUM;
+  config.pin_pwdn = PWDN_GPIO_NUM;
+  config.pin_reset = RESET_GPIO_NUM;
+  config.xclk_freq_hz = <span class="number">20000000</span>;
+  config.pixel_format = PIXFORMAT_JPEG;
+
+  <span class="keyword">if</span> (<span class="function">psramFound</span>()) {
+    config.frame_size = FRAMESIZE_VGA;
+    config.jpeg_quality = <span class="number">10</span>;
+    config.fb_count = <span class="number">2</span>;
+  } <span class="keyword">else</span> {
+    config.frame_size = FRAMESIZE_CIF;
+    config.jpeg_quality = <span class="number">12</span>;
+    config.fb_count = <span class="number">1</span>;
+  }
+
+  esp_err_t err = <span class="function">esp_camera_init</span>(&config);
+  <span class="keyword">if</span> (err != ESP_OK) {
+    Serial.<span class="function">printf</span>(<span class="string">"Inisialisasi kamera gagal, error: 0x%x"</span>, err);
+    <span class="function">delay</span>(<span class="number">1000</span>);
+    ESP.<span class="function">restart</span>();
+  }
+}
+
+String <span class="function">sendPhotoTelegram</span>(String chat_id) {
+  <span class="keyword">const char</span>* myDomain = <span class="string">"api.telegram.org"</span>;
+  String getAll = <span class="string">""</span>;
+  String getBody = <span class="string">""</span>;
+
+  camera_fb_t * fb = <span class="function">esp_camera_fb_get</span>();
+  <span class="keyword">if</span> (!fb) {
+    Serial.<span class="function">println</span>(<span class="string">"Gagal mengambil gambar"</span>);
+    bot.<span class="function">sendMessage</span>(chat_id, <span class="string">"Maaf, kamera gagal mengambil gambar."</span>, <span class="string">""</span>);
+    <span class="keyword">return</span> <span class="string">"Failed"</span>;
+  }
+
+  Serial.<span class="function">println</span>(<span class="string">"Menghubungkan ke "</span> + String(myDomain));
+  <span class="keyword">if</span> (clientTCP.<span class="function">connect</span>(myDomain, <span class="number">443</span>)) {
+    Serial.<span class="function">println</span>(<span class="string">"Koneksi berhasil!"</span>);
+
+    String head = <span class="string">"--RandomNerdTutorials\r\nContent-Disposition: form-data; name=\"chat_id\"; \r\n\r\n"</span> + chat_id +
+                  <span class="string">"\r\n--RandomNerdTutorials\r\nContent-Disposition: form-data; name=\"photo\"; filename=\"photo.jpg\"\r\nContent-Type: image/jpeg\r\n\r\n"</span>;
+    String tail = <span class="string">"\r\n--RandomNerdTutorials--\r\n"</span>;
+
+    <span class="keyword">uint32_t</span> imageLen = fb->len;
+    <span class="keyword">uint32_t</span> totalLen = head.<span class="function">length</span>() + imageLen + tail.<span class="function">length</span>();
+
+    clientTCP.<span class="function">println</span>(<span class="string">"POST /bot"</span> + BOTtoken + <span class="string">"/sendPhoto HTTP/1.1"</span>);
+    clientTCP.<span class="function">println</span>(<span class="string">"Host: "</span> + String(myDomain));
+    clientTCP.<span class="function">println</span>(<span class="string">"Content-Length: "</span> + String(totalLen));
+    clientTCP.<span class="function">println</span>(<span class="string">"Content-Type: multipart/form-data; boundary=RandomNerdTutorials"</span>);
+    clientTCP.<span class="function">println</span>();
+    clientTCP.<span class="function">print</span>(head);
+
+    <span class="keyword">uint8_t</span> *fbBuf = fb->buf;
+    <span class="keyword">size_t</span> fbLen = fb->len;
+
+    <span class="keyword">for</span> (<span class="keyword">size_t</span> n = <span class="number">0</span>; n < fbLen; n += <span class="number">1024</span>) {
+      <span class="keyword">if</span> (n + <span class="number">1024</span> < fbLen) {
+        clientTCP.<span class="function">write</span>(fbBuf, <span class="number">1024</span>);
+        fbBuf += <span class="number">1024</span>;
+      } <span class="keyword">else</span> {
+        <span class="keyword">size_t</span> remainder = fbLen % <span class="number">1024</span>;
+        clientTCP.<span class="function">write</span>(fbBuf, remainder);
+      }
+    }
+
+    clientTCP.<span class="function">print</span>(tail);
+    <span class="function">esp_camera_fb_return</span>(fb);
+
+    <span class="keyword">int</span> waitTime = <span class="number">10000</span>;
+    <span class="keyword">long</span> startTime = <span class="function">millis</span>();
+    <span class="keyword">boolean</span> state = <span class="keyword">false</span>;
+
+    <span class="keyword">while</span> ((<span class="function">millis</span>() - startTime) < waitTime) {
+      <span class="keyword">while</span> (clientTCP.<span class="function">available</span>()) {
+        <span class="keyword">char</span> c = clientTCP.<span class="function">read</span>();
+        <span class="keyword">if</span> (state) getBody += String(c);
+        <span class="keyword">if</span> (c == <span class="string">'\r'</span>) {
+          c = clientTCP.<span class="function">read</span>();
+          <span class="keyword">if</span> (c == <span class="string">'\n'</span>) {
+            c = clientTCP.<span class="function">read</span>();
+            <span class="keyword">if</span> (c == <span class="string">'\r'</span>) {
+              c = clientTCP.<span class="function">read</span>();
+              <span class="keyword">if</span> (c == <span class="string">'\n'</span>) {
+                state = <span class="keyword">true</span>;
+              }
+            }
+          }
+        }
+        <span class="keyword">if</span> (c != <span class="string">' '</span>) getAll += String(c);
+      }
+      <span class="keyword">if</span> (!clientTCP.<span class="function">connected</span>()) <span class="keyword">break</span>;
+    }
+
+    clientTCP.<span class="function">stop</span>();
+    Serial.<span class="function">println</span>(<span class="string">"Foto terkirim!"</span>);
+    <span class="keyword">return</span> <span class="string">"OK"</span>;
+
+  } <span class="keyword">else</span> {
+    Serial.<span class="function">println</span>(<span class="string">"Koneksi ke Telegram gagal."</span>);
+    <span class="keyword">return</span> <span class="string">"Failed"</span>;
+  }
+}
+
+<span class="keyword">void</span> <span class="function">handleNewMessages</span>(<span class="keyword">int</span> numNewMessages) {
+  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i < numNewMessages; i++) {
+    String chat_id = bot.messages[i].chat_id;
+    String text = bot.messages[i].text;
+    String from_name = bot.messages[i].from_name;
+
+    <span class="keyword">if</span> (!<span class="function">isAuthorized</span>(chat_id)) {
+      bot.<span class="function">sendMessage</span>(chat_id, <span class="string">"⚠ Maaf, Anda tidak diizinkan menggunakan bot ini."</span>, <span class="string">""</span>);
+      <span class="keyword">continue</span>;
+    }
+
+    Serial.<span class="function">println</span>(<span class="string">"Menerima perintah: "</span> + text + <span class="string">" dari "</span> + from_name);
+
+    <span class="keyword">if</span> (text == <span class="string">"/start"</span>) {
+      String welcome = <span class="string">"Halo "</span> + from_name + <span class="string">", selamat datang di Smart Box Bot!\n\n"</span>;
+      welcome += <span class="string">"Perintah yang tersedia:\n"</span>;
+      welcome += <span class="string">"/photo - Ambil foto kondisi terkini 📷\n"</span>;
+      welcome += <span class="string">"/open - Buka kunci box 🔓\n"</span>;
+      welcome += <span class="string">"/close - Kunci kembali box 🔒\n"</span>;
+      welcome += <span class="string">"/status - Cek status koneksi dan box"</span>;
+      bot.<span class="function">sendMessage</span>(chat_id, welcome, <span class="string">""</span>);
+    } <span class="keyword">else if</span> (text == <span class="string">"/photo"</span>) {
+      bot.<span class="function">sendMessage</span>(chat_id, <span class="string">"Mengambil gambar..."</span>, <span class="string">""</span>);
+      <span class="function">digitalWrite</span>(FLASH_PIN, HIGH);
+      <span class="function">delay</span>(<span class="number">1000</span>);
+      <span class="function">sendPhotoTelegram</span>(chat_id);
+      <span class="function">digitalWrite</span>(FLASH_PIN, LOW);
+    } <span class="keyword">else if</span> (text == <span class="string">"/open"</span>) {
+      myServo.<span class="function">write</span>(<span class="number">0</span>);
+      bot.<span class="function">sendMessage</span>(chat_id, <span class="string">"🔓 Kunci box telah dibuka."</span>, <span class="string">""</span>);
+    } <span class="keyword">else if</span> (text == <span class="string">"/close"</span>) {
+      myServo.<span class="function">write</span>(<span class="number">50</span>);
+      bot.<span class="function">sendMessage</span>(chat_id, <span class="string">"🔒 Box telah dikunci."</span>, <span class="string">""</span>);
+    } <span class="keyword">else if</span> (text == <span class="string">"/status"</span>) {
+      bot.<span class="function">sendMessage</span>(chat_id, <span class="string">"Bot Aktif dan Terhubung!"</span>, <span class="string">""</span>);
+    }
+  }
+}
+
+<span class="keyword">void</span> <span class="function">checkUltrasonic</span>() {
+  <span class="function">digitalWrite</span>(TRIG_PIN, LOW);
+  <span class="function">delayMicroseconds</span>(<span class="number">2</span>);
+  <span class="function">digitalWrite</span>(TRIG_PIN, HIGH);
+  <span class="function">delayMicroseconds</span>(<span class="number">10</span>);
+  <span class="function">digitalWrite</span>(TRIG_PIN, LOW);
+
+  <span class="keyword">long</span> duration = <span class="function">pulseIn</span>(ECHO_PIN, HIGH, <span class="number">5000</span>);
+  <span class="keyword">if</span> (duration > <span class="number">0</span>) {
+    <span class="keyword">float</span> distance = duration * <span class="number">0.034</span> / <span class="number">2.0</span>;
+    Serial.<span class="function">print</span>(<span class="string">"Jarak terdeteksi: "</span>);
+    Serial.<span class="function">print</span>(distance);
+    Serial.<span class="function">println</span>(<span class="string">" cm"</span>);
+
+    <span class="keyword">if</span> (distance &lt;= <span class="number">30.0</span> && distance > <span class="number">1</span> && <span class="function">millis</span>() - lastAlertTime > alertCooldown) {
+      Serial.<span class="function">println</span>(<span class="string">"Objek terdeteksi!"</span>);
+      String message = <span class="string">"🔔 Ada Paket Datang! 🔔\n\nSilakan kirim perintah /photo untuk melihat."</span>;
+      <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i < NUM_ALLOWED_IDS; i++) {
+        bot.<span class="function">sendMessage</span>(ALLOWED_CHAT_IDS[i], message, <span class="string">"Markdown"</span>);
+      }
+      lastAlertTime = <span class="function">millis</span>();
+    }
+  }
+}
+
+<span class="keyword">void</span> <span class="function">setup</span>() {
+  <span class="function">WRITE_PERI_REG</span>(RTC_CNTL_BROWN_OUT_REG, <span class="number">0</span>);
+  Serial.<span class="function">begin</span>(<span class="number">115200</span>);
+
+  <span class="function">pinMode</span>(FLASH_PIN, OUTPUT);
+  <span class="function">digitalWrite</span>(FLASH_PIN, LOW);
+  <span class="function">pinMode</span>(TRIG_PIN, OUTPUT);
+  <span class="function">pinMode</span>(ECHO_PIN, INPUT);
+
+  myServo.<span class="function">attach</span>(SERVO_PIN, <span class="number">500</span>, <span class="number">2400</span>);
+  myServo.<span class="function">write</span>(<span class="number">0</span>);
+
+  <span class="function">configInitCamera</span>();
+
+  <span class="comment">// =======================================================</span>
+  <span class="comment">// === KODE UNTUK MEROTASI GAMBAR 90 DERAJAT ===</span>
+  sensor_t * s = <span class="function">esp_camera_sensor_get</span>();
+  s-&gt;<span class="function">set_hmirror</span>(s, <span class="number">1</span>); <span class="comment">// Balik Horizontal</span>
+  <span class="comment">// =======================================================</span>
+
+  WiFi.<span class="function">mode</span>(WIFI_STA);
+  WiFi.<span class="function">begin</span>(ssid, password);
+  <span class="comment">// clientTCP.setCACert(TELEGRAM_CERTIFICATE_ROOT); // Pastikan variabel ini didefinisikan jika Anda menggunakan sertifikat</span>
+
+  Serial.<span class="function">print</span>(<span class="string">"Menghubungkan ke WiFi..."</span>);
+  <span class="keyword">while</span> (WiFi.<span class="function">status</span>() != WL_CONNECTED) {
+    <span class="function">delay</span>(<span class="number">1000</span>);
+    Serial.<span class="function">print</span>(<span class="string">"."</span>);
+  }
+
+  Serial.<span class="function">println</span>(<span class="string">"\nWiFi Terhubung!"</span>);
+  Serial.<span class="function">print</span>(<span class="string">"Alamat IP: "</span>);
+  Serial.<span class="function">println</span>(WiFi.<span class="function">localIP</span>());
+
+  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i < NUM_ALLOWED_IDS; i++) {
+    bot.<span class="function">sendMessage</span>(ALLOWED_CHAT_IDS[i], <span class="string">"✅ Smart Box Bot telah aktif dan siap digunakan."</span>, <span class="string">""</span>);
+  }
+}
+
+<span class="keyword">void</span> <span class="function">loop</span>() {
+  <span class="keyword">if</span> (<span class="function">millis</span>() - lastSensorCheck > sensorInterval) {
+    <span class="function">checkUltrasonic</span>();
+    lastSensorCheck = <span class="function">millis</span>();
+  }
+
+  <span class="keyword">if</span> (<span class="function">millis</span>() - lastTimeBotRan > botRequestDelay) {
+    <span class="keyword">int</span> numNewMessages = bot.<span class="function">getUpdates</span>(bot.last_message_received + <span class="number">1</span>);
+    <span class="keyword">if</span> (numNewMessages > <span class="number">0</span>) {
+      <span class="function">handleNewMessages</span>(numNewMessages);
+    }
+    lastTimeBotRan = <span class="function">millis</span>();
+  }
+}
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div id="conclusion-content" class="tab-content">
+            <section class="section">
+                <h2><i class="fas fa-clipboard-check"></i> KESIMPULAN & SARAN</h2>
+                <div class="conclusion">
+                    <h3><i class="fas fa-check"></i> Kesimpulan</h3>
+                    <ul>
+                        <li>Sistem Smart Box Packet berbasis IoT menggunakan ESP32-CAM dan integrasi chatbot Telegram berhasil memberikan solusi praktis dalam menangani permasalahan penerimaan paket saat penghuni rumah tidak berada di tempat.</li>
+                        <li>Sistem ini mampu mendeteksi keberadaan paket menggunakan sensor ultrasonik, memberikan notifikasi otomatis melalui Telegram, serta memberikan akses kepada pengguna untuk membuka dan mengunci kotak dari jarak jauh.</li>
+                        <li>Berdasarkan hasil pengujian, seluruh komponen bekerja dengan baik dan saling terintegrasi dengan stabil selama koneksi Wi-Fi tersedia.</li>
+                    </ul>
+                </div>
+                <div class="suggestions">
+                    <h3><i class="fas fa-lightbulb"></i> Saran Pengembangan</h3>
+                    <ul>
+                        <li>Menambahkan sensor pendeteksi keberadaan manusia di sekitar kotak sebagai pengaman tambahan.</li>
+                        <li>Memasang kamera tambahan di luar kotak untuk memantau siapa yang mengaksesnya.</li>
+                        <li>Menggunakan koneksi internet yang lebih stabil untuk mengurangi delay komunikasi.</li>
+                        <li>Menambahkan sumber energi alternatif seperti panel surya untuk penggunaan jangka panjang.</li>
+                        <li>Mengembangkan antarmuka pengguna berbasis aplikasi mobile untuk pengalaman yang lebih interaktif.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2><i class="fas fa-book"></i> DAFTAR PUSTAKA</h2>
+                <div class="reference-list">
+                    <div class="reference-item">
+                        Govinda, N., Supit, Y., & Baharuddin, B. (2022). Prototype pengiriman notifikasi penerima paket berbasis esp8266. Simtek: Jurnal Sistem Informasi Dan Teknik Komputer, 7(1), 46-51.
+                    </div>
+                    <div class="reference-item">
+                        Ramadhani, V., & Santoso, B. (2023). PERANCANGAN ALAT MONITORING KUNCI PINTU DENGAN KONSEP IOT MENGGUNAKAN NODEMCU BERBASIS TELEGRAM. LOGIC: Jurnal Ilmu Komputer Dan Pendidikan, 1(5), 1145-1151.
+                    </div>
+                    <div class="reference-item">
+                        Rismayana, A. H., Mustopa, M. S., & Rohmayani, D. (2022). Rancang Bangun Kotak Penerima Paket Menggunakan Barcode Berbasis Internet of Things (IoT). Journal of Informatics and Electronics Engineering, 2(2), 35-40.
+                    </div>
+                    <div class="reference-item">
+                        Yulendra, R. D., Indrawati, E. M., Maulidina, M., & Suwardono, A. (2023). Rancang Bangun Alat Monitoring Notifikasi Pintu Rumah Menggunakan Bot Telegram Berbasis IoT. G-Tech: Jurnal Teknologi Terapan, 7(4), 1471-1478.
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- <div id="documentation-content" class="tab-content">
+            <section class="section">
+                <h2><i class="fas fa-camera"></i> DOKUMENTASI</h2>
+                <div class="gallery">
+                    <div class="gallery-item">Prototipe Smart Box</div>
+                    <div class="gallery-item">Sistem Penguncian</div>
+                    <div class="gallery-item">Antarmuka Telegram</div>
+                    <div class="gallery-item">Pengujian Sistem</div>
+                    <div class="gallery-item">Implementasi Lapangan</div>
+                    <div class="gallery-item">Tampilan LCD</div>
+                </div>
+            </section>
+        </div> -->
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="thank-you">
+                <i class="fas fa-handshake"></i> TERIMA KASIH
+            </div>
+            <p>Terima kasih telah mengikuti presentasi kami</p>
+            <p style="margin-top: 20px; opacity: 0.8;">Smart Box Packet Berbasis IoT - Kelompok 6 | Universitas Bina Insani Bekasi</p>
+        </div>
+    </footer>
+
+    <script src="script2.js"></script>
+</body>
+</html>
